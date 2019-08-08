@@ -16,7 +16,7 @@ public class UserRegistration {
 	
 	private static UserRegistration usrregd = new UserRegistration();
 	
-	private String SEND_MAIL_URL = "http://localhost:8084/sendmail";
+	private String SEND_MAIL_URL;
 	
 	private final String UPDATE_SUCCESS = "Update successful";
 	
@@ -28,6 +28,12 @@ public class UserRegistration {
 	
 	private UserRegistration() {
 		userRecords = new ArrayList<User>();
+		if (System.getenv("MAIL_HOST") != null) {
+			SEND_MAIL_URL = "http://" + System.getenv("MAIL_HOST") + ":8084/sendmail";
+		} else {
+			SEND_MAIL_URL = "http://localhost:8084/sendmail";
+		}
+		System.out.println("Mail host: " + SEND_MAIL_URL);
 	}
 	
 	public static UserRegistration getInstance() {

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  user:
+    build: ./spring-boot-rest-1
+    ports:
+      - "8083:8083"
+    environment:
+      MAIL_HOST: mail
+  mail:
+    build: ./spring-boot-rest-2
+    ports:
+      - "8084:8084"
