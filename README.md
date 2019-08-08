@@ -9,6 +9,7 @@ This is a simple example to provide REST API by SpringBoot. There are two projec
 # Step
 1. Download source code by "git clone"
 2. Compile sourcecode and package executable jar file.
+
    cd spring-boot-rest-2
    mvn clean install
 Because spring-boot-rest-1 dendpends on one class of spring-boot-rest-2, and SpringBoot repackages jar file, we need replace springboot jar files with normal jar file. 
