@@ -60,10 +60,14 @@ Parameter:  {
 	         "age": 26,
 	         "email": "12345@345"
 	    }
+	    
 Success Response: 
+
             code : 201
             Content: {"name":"Zhouyu","age":26,"email":"12345@345","registrationStatus":"Successful"}
+	    
 Error Response:
+
             code : 409
             Content: User alread exists
             or
@@ -71,8 +75,11 @@ Error Response:
             Content: User email must not be empty.
             
 2. Register multiple users
+
 URL:        /register/users
+
 Method:     POST
+
 Parameter:  [{
 	              "name": "Zhouyu",
 	               "age": 26,
@@ -83,36 +90,50 @@ Parameter:  [{
 	               "age": 23,
 	               "email": "1235@345"
 	          }]
+		  
 Response: 
+
             code : 201
             Content: []
             If all users are registered, then return empty. Otherwise names of failed users are returned in response;
             code : 201
             Content: ["Zhouyu","Zhugeliang"]
+	    
 3. Update user
+
 URL:        /update/user
+
 Method:     PUT
+
 Parameter:  {
 	              "name": "Zhouyu",
 	               "age": 26,
 	               "email": "12345@345"
 	          }
+		  
 Success Response: 
+
             code : 200
             Content: Update successful
             or 
             code : 200
             Content: Update un-successful
+	    
 Error Response:
+
             code : 400
             Content: User email format is wrong.
             or
             code : 400
             Content: User email must not be empty.
+	    
             
 4. Update users
+
 URL:        /update/users
+
 Method:     PUT
+
 Parameter:  [{
 	              "name": "Zhouyu",
 	               "age": 26,
@@ -123,7 +144,9 @@ Parameter:  [{
 	               "age": 23,
 	               "email": "1235@345"
 	          }]
+		  
 Success Response: 
+
             code : 200
             Content: []
             or 
@@ -132,27 +155,40 @@ Success Response:
             Content: ["Zhouyu"]
 
 5. Delete user
+
 URL:        /delete/user/{email}
+
 Method:     DELETE
+
 Parameter:  {
 	              "name": "Zhouyu",
 	               "age": 26,
 	               "email": "12345@345"
 	          }
+		  
 Success Response: 
+
             code : 200
             Content: Delete successful
+	    
 Error Response:
+
             code : 404
             Content: {"timestamp":"2019-08-08T07:56:14.318+0000","status":404,"error":"Not Found","message":"No message available","path":"/delete/user"}
+	    
             
 6. Delete users
+
 URL:        /delete/users
+
 Method:     PUT
+
 Parameter:  ["12345@345",
             "1235@345"
 	          ]
+		  
 Success Response: 
+
             code : 200
             Content: []
             or 
